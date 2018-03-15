@@ -2,12 +2,35 @@
 /*=====================================================
 	Layouts
 =======================================================*/
+.site-content{
+	
+}
+.site-content-in{
+	display:flex;
+	flex-wrap:wrap;	
+}
 
 /*
 	Layouts --> Content
 -----------------------------------------------*/
+.has-sidebar .primary{
+	width:70%;	
+}
+.primary{
+	width:100%;	
+	box-sizing:border-box;
+	padding-bottom:30px;
+	padding-top:30px;
+}
 
 
 /*
 	Layouts --> Sidebar
 -----------------------------------------------*/
+.secondary{
+	width:30%;
+	padding-left:40px;
+	padding-bottom:30px;
+	padding-top:30px;
+	box-sizing:border-box;
+}
