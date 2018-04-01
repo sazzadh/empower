@@ -165,10 +165,11 @@ html {
 	Font Style
 =======================================================*/
 body{
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.5;
 	color: #222;
 	background-color:#fff;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 a {
 	color: #8952E9;
@@ -1388,21 +1389,3 @@ a.responsive-menu-close:hover{
 		display: none;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*=====================================================
-	Page Hero
-=======================================================*/

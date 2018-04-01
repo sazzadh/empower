@@ -1,4 +1,4 @@
-    <?php get_template_part('contents/part', 'footer'); ?>
+    <?php do_action('empower_site_footer'); ?>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

@@ -3,6 +3,8 @@ if(file_exists(get_stylesheet_directory().'/inc/customize-std.php')){
 	$GLOBALS['empower_STD_theme_mod_data'] = include(get_stylesheet_directory().'/inc/customize-std.php');
 }elseif(file_exists(get_template_directory().'/inc/customize-std.php')){
 	$GLOBALS['empower_STD_theme_mod_data'] = include(get_template_directory().'/inc/customize-std.php');
+}else{
+	$GLOBALS['empower_STD_theme_mod_data'] = array();
 }
 
 if(!function_exists('empower_mood')):
@@ -76,6 +78,23 @@ if(!function_exists('empower_get_excerpt')):
 	  $content = apply_filters('the_content', $content); 
 	  $content = str_replace(']]>', ']]&gt;', $content);
 	  return $content;
+	}
+endif;
+
+
+
+/**
+ * Custom Post excerpt
+==========================================================*/
+if(!function_exists('empower_the_content')):
+	function empower_the_content($limit = 77){
+	  if(strpos(get_the_content(), '<!--more-->') !== false){
+		 the_content();
+	  }else{
+		  echo empower_get_excerpt($limit);
+		  echo '<a href="'.esc_url( get_permalink() ).'">'.empower_string('read_more').'</a>';
+		  
+	  }
 	}
 endif;
 
@@ -227,3 +246,42 @@ function empower_category_transient_flusher() {
 }
 add_action( 'edit_category', 'empower_category_transient_flusher' );
 add_action( 'save_post',     'empower_category_transient_flusher' );
+
+
+
+/**
+ * Show HTML of the header
+ *
+ * @return html
+ */
+if(!function_exists('empower_site_header')){
+	function empower_site_header(){
+		get_template_part('contents/part', 'header');
+	}
+}
+add_action( 'empower_site_header', 'empower_site_header' );
+
+
+/**
+ * Show HTML of the Footer
+ *
+ * @return html
+ */
+if(!function_exists('empower_site_footer')){
+	function empower_site_footer(){
+		get_template_part('contents/part', 'footer');
+	}
+}
+add_action( 'empower_site_footer', 'empower_site_footer' );
+
+
+
+function empower_string($id){
+	$string = array(
+		'read_more' => __('Read More', 'empower'),
+	);
+	
+	if(isset($string[$id])){
+		return $string[$id];
+	}
+}

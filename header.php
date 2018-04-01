@@ -14,4 +14,4 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'empower' ); ?></a>
     
-    <?php get_template_part('contents/part', 'header'); ?>
+    <?php do_action('empower_site_header'); ?>

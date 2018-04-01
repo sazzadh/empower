@@ -162,6 +162,8 @@ if(!function_exists('empower_scripts')){
 		wp_enqueue_style( 'empower-header', get_template_directory_uri() . '/assets/header.css' );
 		wp_enqueue_style( 'empower-footer', get_template_directory_uri() . '/assets/footer.css' );
 		wp_enqueue_style( 'empower-layouts', get_template_directory_uri() . '/assets/layouts.css' );
+		wp_enqueue_style( 'empower-post', get_template_directory_uri() . '/assets/post.css' );
+		wp_enqueue_style( 'empower-woocommerce', get_template_directory_uri() . '/assets/woocommerce.css' );
 		wp_enqueue_style( 'empower', get_stylesheet_uri() );
 		wp_enqueue_script( 'empower-js', get_template_directory_uri() . '/assets/empower.js', array('jquery'), '1.0', false );
 		
