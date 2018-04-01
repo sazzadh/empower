@@ -7,7 +7,7 @@
 			//the_posts_navigation();
 			
 		else :
-			_e('Sorry No entry Found', 'steed');
+			_e('Sorry No entry Found', 'empower');
 		endif;
 	?>
 </div>
