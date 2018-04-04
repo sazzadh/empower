@@ -46,7 +46,7 @@ if(!function_exists('empower_paginate')):
 		if( $query == NULL ){ $query = $wp_query; }
 		$output = null;
 		if ($query->max_num_pages > 1) {
-			$output .= '<div class="pagenav">';
+			$output .= '<div class="ep_pagenav">';
 				$big = 999999999; // need an unlikely integer		
 				$output .= paginate_links( array(
 					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -92,7 +92,7 @@ if(!function_exists('empower_the_content')):
 		 the_content();
 	  }else{
 		  echo empower_get_excerpt($limit);
-		  echo '<a href="'.esc_url( get_permalink() ).'">'.empower_string('read_more').'</a>';
+		  echo '<a href="'.esc_url( get_permalink() ).'" class="ep_button entry-button">'.empower_string('read_more').'</a>';
 		  
 	  }
 	}

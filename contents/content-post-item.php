@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('empower-post-item'); ?>>
 			<?php if ( has_post_thumbnail() && !is_search()): ?>
                 <div class="entry-image">
-                    <?php the_post_thumbnail('large'); ?>
+                    <?php the_post_thumbnail('empower_blog'); ?>
                 </div>
             <?php endif; ?>
             <header class="entry-header">

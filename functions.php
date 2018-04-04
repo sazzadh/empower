@@ -31,6 +31,9 @@ if(!function_exists('empower_setup')){
 			'flex-width'  => true,
 		) );
 		
+		
+		add_image_size('empower_blog', 800, 400, true);
+		
 	}
 }
 add_action( 'after_setup_theme', 'empower_setup' );
