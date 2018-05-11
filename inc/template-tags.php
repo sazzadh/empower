@@ -64,7 +64,7 @@ endif;
 
 /**
  * Custom Post excerpt
-==========================================================*/
+==========================================================*/	
 if(!function_exists('empower_get_excerpt')):
 	function empower_get_excerpt($limit = 77){
 	  $content = explode(' ', get_the_content(), $limit);
@@ -92,7 +92,7 @@ if(!function_exists('empower_the_content')):
 		 the_content();
 	  }else{
 		  echo empower_get_excerpt($limit);
-		  echo '<a href="'.esc_url( get_permalink() ).'" class="ep_button entry-button">'.empower_string('read_more').'</a>';
+		  echo '<a href="'.esc_url( get_permalink() ).'" class="ep_button entry-button">'.__('Read More', 'empower').'</a>';
 		  
 	  }
 	}
@@ -284,4 +284,15 @@ function empower_string($id){
 	if(isset($string[$id])){
 		return $string[$id];
 	}
+}
+
+
+
+
+function empower_get_first_image_url_from_string($content) {
+	  $first_img = '';
+	  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
+	  $first_img = $matches [1] [0];
+	
+	  return $first_img;
 }

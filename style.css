@@ -1,14 +1,14 @@
 /*
 Theme Name: Empower
-Theme URI: #
-Author: #
-Author URI: #
-Description: #
-Version: 1.01
+Theme URI: https://sazzadh.com/empower
+Author: Sazzad Hu
+Author URI: https://sazzadh.com/
+Description: Empower is very easy to use and standard WordPress theme. The theme is easy to customize and fast loaded. It has header advertisment place and phone number option. The it has two custom page template. It has footer widgets and contact info option. 
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: empower
-Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -426,42 +426,6 @@ img{
 /*=====================================================
 	Video Style
 =======================================================*/
-.wp-video, 
-video.wp-video-shortcode, 
-.mejs-container, 
-.mejs-overlay.load {
-	width: 100% !important;
-	height: 100% !important;
-}
-.mejs-container {
-	padding-top: 56.25%;
-}
-.wp-video, video.wp-video-shortcode {
-	max-width: 100% !important;
-}
-video.wp-video-shortcode {
-	position: relative;
-}
-.mejs-mediaelement {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-.mejs-controls {
-	display: none;
-	opacity:0;
-}
-.mejs-overlay-play {
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: auto !important;
-	height: auto !important;
-}
-
 
 
 
@@ -479,11 +443,21 @@ video.wp-video-shortcode {
 =======================================================*/
 .widget {
 	margin: 0px 0 50px;
+	font-size:14px;
+}
+
+.widget .widget-title{
+	font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
 }
 
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
+	width:100%;
+	padding:10px 10px;
 }
 
 .widget_meta ul,
@@ -492,7 +466,7 @@ video.wp-video-shortcode {
 .widget_recent_entries ul,
 .widget_archive ul,
 .widget_categories ul,
-.widget_recent_comments ul{ margin-left:0px; list-style-type:none; padding: 0; margin-top: -3px; margin-bottom: -6px;}
+.widget_recent_comments ul{ margin-left:0px; list-style-type:none; padding: 0; margin-top: -3px; margin-bottom: -6px; }
 
 .widget_meta ul ul.children,
 .widget_pages ul ul.children,
@@ -500,8 +474,55 @@ video.wp-video-shortcode {
 .widget_recent_entries ul ul.children,
 .widget_archive ul ul.children,
 .widget_categories ul ul.children,
-.widget_recent_comments ul ul.children{ margin-left:20px !important; }
-
+.widget_recent_comments ul ul.children,
+.widget_nav_menu ul ul.sub-menu{ 
+    margin-left: 0px !important;
+    background-color: #f3f3f3;
+    margin-top: 7px;
+	border-top: 1px solid #daddde;
+	margin-bottom: -7px;
+}
+.footer-widgets .widget_meta ul ul.children,
+.footer-widgets .widget_pages ul ul.children,
+.footer-widgets .widget_nav_menu ul ul.children,
+.footer-widgets .widget_recent_entries ul ul.children,
+.footer-widgets .widget_archive ul ul.children,
+.footer-widgets .widget_categories ul ul.children,
+.footer-widgets .widget_recent_comments ul ul.children,
+.footer-widgets .widget_nav_menu ul ul.sub-menu{
+	background-color:transparent;
+}
+.widget_meta ul ul.children li ,
+.widget_pages ul ul.children li ,
+.widget_nav_menu ul ul.children li ,
+.widget_recent_entries ul ul.children li ,
+.widget_archive ul ul.children li ,
+.widget_categories ul ul.children li ,
+.widget_recent_comments ul ul.children li,
+.widget_nav_menu ul ul.sub-menu li{ 
+	padding-left:15px !important; 
+}
+.widget_meta ul ul.children li ul,
+.widget_pages ul ul.children li ul,
+.widget_nav_menu ul ul.children li ul,
+.widget_recent_entries ul ul.children li ul,
+.widget_archive ul ul.children li ul,
+.widget_categories ul ul.children li ul,
+.widget_recent_comments ul ul.children li ul,
+.widget_nav_menu ul ul.sub-menu li ul{ 
+	margin-left: -15px !important;
+}
+.widget_meta ul ul.children li ul li,
+.widget_pages ul ul.children li ul li,
+.widget_nav_menu ul ul.children li ul li,
+.widget_recent_entries ul ul.children li ul li,
+.widget_archive ul ul.children li ul li,
+.widget_categories ul ul.children li ul li,
+.widget_recent_comments ul ul.children li ul li,
+.widget_nav_menu ul ul.sub-menu li ul li{ 
+	padding-left:30px !important; 
+	
+}
 .widget_meta ul ul.children li:last-child,
 .widget_pages ul ul.children li:last-child,
 .widget_nav_menu ul ul.children li:last-child,
@@ -519,12 +540,13 @@ video.wp-video-shortcode {
 .widget_archive ul li,
 .widget_categories ul li,
 .widget_recent_comments ul li{
-    font-size: 12px;
-    color: #4285f4;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400;
+	color: #44494b;
+    padding: 7px 0px;
+    line-height: 1.7;
+    border-bottom: 1px solid #daddde;
+    text-transform: capitalize;
+    margin-bottom: 0px;
 }
 .widget_meta ul li:last-child,
 .widget_pages ul li:last-child,
@@ -534,6 +556,7 @@ video.wp-video-shortcode {
 .widget_categories ul li:last-child,
 .widget_recent_comments ul li:last-child{
 	margin-bottom:0px;
+	border-bottom:0px;
 }
 .widget_meta ul li a,
 .widget_pages ul li a,
@@ -556,24 +579,27 @@ video.wp-video-shortcode {
 
 /*--Tags ----*/
 .tagcloud a {
-	padding:2px 9px 2px 9px; 
-	font-weight:400; 
-	margin: 0px -2px 2px 0px; 
-	display:inline-block;  
-	-moz-transition:.8s linear; 
-	-webkit-transition:.8s ease-out; 
-	transition:.8s linear; 
-	font-size:12px !important;
+    padding: 5px 10px 4px 10px;
+    font-weight: 400;
+    margin: 0px -2px 2px 0px;
+    display: inline-block;
+    -moz-transition: .8s linear;
+    -webkit-transition: .8s ease-out;
+    transition: .8s linear;
+    font-size: 12px !important;
+    background-color: #f2f2f2;
+    color: #44494b;
 }
 .tagcloud a:hover {
 	-moz-transition:.01s linear; 
 	-webkit-transition:.01s ease-out; 
 	transition:.01s linear;
+    color: #ea4345;
 }
 	
 	
 /*--calendar ----*/
-.widget_calendar table#wp-calendar { width:100%;}
+.widget_calendar table#wp-calendar { width:100%; font-size:14px;}
 .widget_calendar table td {border:none}
 .widget_calendar table#wp-calendar>tbody>tr>td>a {}
 .widget_calendar table#wp-calendar>tbody>tr>td>a:hover {background:none;}
@@ -643,6 +669,25 @@ video.wp-video-shortcode {
 	content: " ";
 	display:table;
 	clear:both;
+}
+
+/*--RSS -----*/
+.widget_rss{
+	
+}
+.widget_rss ul{
+	margin-left:0px;
+}
+.widget_rss ul li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 14px;
+    border-bottom: 1px solid #daddde;
+    padding: 7px 0px;
+    line-height: 1.7;
+}
+.widget_rss ul li a{
+	
 }
 
 
@@ -1236,13 +1281,13 @@ article.comment-body .reply{
 /*=====================================================
 	Primary Nav
 =======================================================*/
-.primary_nav ul.menu{
+.primary_nav ul{
     margin: 0;
     width: auto;
     padding-left: 0;
     list-style: none;
 }
-.primary_nav ul.menu li {
+.primary_nav ul li {
     position: relative;
     display: block;
     background-color: rgba(255, 255, 255, 0);
@@ -1250,10 +1295,10 @@ article.comment-body .reply{
     font-size: 16px;
 
 }
-.primary_nav ul.menu li.menu-item-has-children a{
+.primary_nav ul li.menu-item-has-children a{
 	padding-right: 20px;
 }
-.primary_nav ul.menu li.menu-item-has-children > a:after{
+.primary_nav ul li.menu-item-has-children > a:after{
 	content:" ";
 	position:absolute;
 	right: 5px;
@@ -1264,10 +1309,10 @@ article.comment-body .reply{
 	border-top-color: inherit;
 	margin-top: -2px;
 }
-.primary_nav ul.menu li ul li{
+.primary_nav ul li ul li{
 	margin-right: 0;
 }
-.primary_nav ul.menu a {
+.primary_nav ul a {
     display: inline-block;
     text-decoration: none;
     padding: 15px 12px 15px 12px;
@@ -1277,19 +1322,19 @@ article.comment-body .reply{
     letter-spacing: 0.3px;
     position: relative;
 }
-.primary_nav ul.menu ul a {
+.primary_nav ul ul a {
 	padding-bottom: 8px;
 	padding-top: 10px;
 	letter-spacing: 0.3px;
     display: block;
 }
-.primary_nav ul.menu li:hover{
+.primary_nav ul li:hover{
 	color:#d3d3d3;
 }
-.primary_nav ul.menu li a:hover{
+.primary_nav ul li a:hover{
 	color: inherit;
 }
-.primary_nav ul.menu ul {
+.primary_nav ul ul {
     margin: 0;
     float: left;
     position: absolute;
@@ -1307,31 +1352,31 @@ article.comment-body .reply{
     -moz-box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
 }
-.primary_nav ul.menu ul li.menu-item-has-children > a:after{
+.primary_nav ul ul li.menu-item-has-children > a:after{
 	border-top-color: transparent;
 	border-left-color: inherit;
 	margin-top: -4px;
 }
-.primary_nav ul.menu ul ul {
+.primary_nav ul ul ul {
 	left: -999em;
 	top: 0;
 }
-.primary_nav ul.menu ul li {
+.primary_nav ul ul li {
 	width: 260px;
 }
-.primary_nav ul.menu ul li {
+.primary_nav ul ul li {
 	border-radius: 0;
 	border-bottom: 1px solid rgb(222, 222, 222);
 	background-color:rgba(0, 0, 0, 0);
 }
-.primary_nav ul.menu ul li:last-child{
+.primary_nav ul ul li:last-child{
 	border-bottom:0;
 }
-.primary_nav ul.menu ul li:hover{
+.primary_nav ul ul li:hover{
 	background-color:rgba(255, 255, 255, 0.1);
 	color:#fff;
 }
-.primary_nav ul.menu ul li a{
+.primary_nav ul ul li a{
 	margin-left: 0;
 	color: #222;
 	border-top: 0;
@@ -1341,36 +1386,36 @@ article.comment-body .reply{
 	padding-right: 15px;
 	font-size:14px;
 }
-.primary_nav ul.menu ul li a:hover{
+.primary_nav ul ul li a:hover{
 	background-color:#EEEEEE;
 	color:#111;
 	opacity:1;
 }
 
-.primary_nav ul.menu li:hover > a,
-.primary_nav ul.menu li.focus > a {
+.primary_nav ul li:hover > a,
+.primary_nav ul li.focus > a {
 }
-.primary_nav ul.menu ul :hover > a,
-.primary_nav ul.menu ul .focus > a {
+.primary_nav ul ul :hover > a,
+.primary_nav ul ul .focus > a {
 }
-.primary_nav ul.menu ul a:hover,
-.primary_nav ul.menu ul a.focus {
+.primary_nav ul ul a:hover,
+.primary_nav ul ul a.focus {
 }
-.primary_nav ul.menu li:hover > ul,
-.primary_nav ul.menu li.focus > ul {
+.primary_nav ul li:hover > ul,
+.primary_nav ul li.focus > ul {
 	left: auto;
 }
-.primary_nav ul.menu ul li:hover > ul,
-.primary_nav ul.menu ul li.focus > ul {
+.primary_nav ul ul li:hover > ul,
+.primary_nav ul ul li.focus > ul {
 	left: 100%;
 }
-.primary_nav ul.menu .current_page_item,
-.primary_nav ul.menu .current-menu-item,
-.primary_nav ul.menu .current_page_ancestor{
+.primary_nav ul .current_page_item,
+.primary_nav ul .current-menu-item,
+.primary_nav ul .current_page_ancestor{
 
 	color:#000;
 }
-.primary_nav ul.menu li.menu-item-has-children:hover ul{
+.primary_nav ul li.menu-item-has-children:hover ul{
     display: block;
 }
 
@@ -1789,8 +1834,11 @@ a.responsive-menu-close:hover{
 	padding-bottom: 50px;
 	margin-bottom: 0;
 }
-.empower-post-item .entry-image{
+.empower-post-item .entry-media{
 	margin-bottom:30px;
+}
+.empower-post-item .entry-image img{
+	margin-bottom:-10px;
 }
 .empower-post-item .entry-title{
 	font-weight:bold;
@@ -1837,6 +1885,14 @@ a.responsive-menu-close:hover{
 }
 .empower-post-item .entry-button{
     margin-top: 10px;
+}
+
+.sticky.empower-post-item {
+	border-bottom: 0;
+    padding: 30px;
+    background-color: rgba(66, 133, 244, 0.19);
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px #4285f4;
 }
 
 
@@ -1928,3 +1984,40 @@ a.responsive-menu-close:hover{
 	padding: 13px 10px;
 	margin-bottom: 0;
 }
+
+
+
+
+
+
+
+
+
+
+/*=====================================================
+	Sidebar
+=======================================================*/
+/*.secondary .widget .widget-title{
+	font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: block;
+}
+.secondary .widget ul, 
+.secondary .widget ol {
+    padding: 20px 23px  20px 23px;
+    overflow: hidden;
+    margin-left: 0;
+    list-style: none;
+    background-color: #ebeeef;
+    width: 100%;
+}
+.secondary .widget ul li, 
+.secondary .widget ol li {
+
+}
+.secondary .widget ul li a {
+	color: #44494b;
+    font-size: 14px;
+    font-weight: 400;
+}*/

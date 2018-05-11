@@ -77,4 +77,11 @@ jQuery(document).ready(function($) {
 		$("body").removeClass('mobile-menu-active');
 	});
 	
+	
+	/*	
+		Fitvids
+	------------------------------------------------------------------------*/	
+	 $('iframe[src*="youtube"], iframe[src*="videopress"]').parent().fitVids({ 
+	 	customSelector: "iframe[src^='https://videopress.com']",
+	 });
 });

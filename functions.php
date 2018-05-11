@@ -34,6 +34,18 @@ if(!function_exists('empower_setup')){
 		
 		add_image_size('empower_blog', 800, 400, true);
 		
+		add_theme_support(
+			'post-formats', array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'audio',
+			)
+		);
+		
 	}
 }
 add_action( 'after_setup_theme', 'empower_setup' );
@@ -66,6 +78,16 @@ add_action( 'after_setup_theme', 'empower_early_setup', 1);
 ===================================*/
 // Enable shortcodes in text widgets
 add_filter('widget_text','do_shortcode');
+
+function empower_excerpt_length( $length ) {
+	return 50;
+}
+add_filter( 'excerpt_length', 'empower_excerpt_length', 999 );
+
+function empower_excerpt_more( $more ) {
+    return '';
+}
+add_filter('excerpt_more', 'empower_excerpt_more');
 
 
 
@@ -160,6 +182,9 @@ if(!function_exists('empower_scripts')){
 		
 		/*== flexibility ==*/
 		wp_enqueue_script( 'empower-flexibility', get_template_directory_uri() . '/assets/flexibility.js', array('jquery'), '1.0', false );
+		
+		/*== fitvids ==*/
+		wp_enqueue_script( 'empower-fitvids', get_template_directory_uri() . '/assets/jquery.fitvids.js', array('jquery'), '1.1', false );
 		
 		/*== Theme ==*/
 		wp_enqueue_style( 'empower', get_stylesheet_uri() );
